@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProAgil.API.Migrations
 {
@@ -13,7 +14,7 @@ namespace ProAgil.API.Migrations
                     EventoId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Local = table.Column<string>(nullable: true),
-                    DataEvento = table.Column<string>(nullable: true),
+                    DataEvento = table.Column<DateTime>(nullable: true),
                     Tema = table.Column<string>(nullable: true),
                     QtdPessoas = table.Column<string>(nullable: true),
                     Lote = table.Column<string>(nullable: true),
