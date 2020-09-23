@@ -60,17 +60,18 @@ namespace ProAgil.API.Controllers {
             return BadRequest ();
         }
  
-         [HttpPut]
+         
+        [HttpPut("{EventoId}")]
         public async Task<IActionResult> Put (int EventoId, Evento model) {
             try {
                 var evento = await _repo.GetEventoAsyncById (EventoId, false);
 
                 if (evento == null)
                     return NotFound ();
-                _repo.Add (model);
+                _repo.Update(model);
 
                 if (await _repo.SaveChangesAsync ())
-                    return Created ($"/api/evento/{model.Id}", model);
+                    return Created ($"/api/evento/{evento.Id}", model);
 
             } catch (System.Exception) {
                 return this.StatusCode (StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
