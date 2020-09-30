@@ -25,6 +25,14 @@ export class EventoService {
   }
 
   // tslint:disable-next-line: typedef
+  postUpload(file: File, name: string) {
+    const fileToUpload = <File> file[0];
+    const formData = new FormData();
+    formData.append('file', fileToUpload, name);
+    return this.http.post(`${this.baseUrl}/upload`, formData);
+  }
+
+  // tslint:disable-next-line: typedef
   postEvento(evento: Evento) {
     return this.http.post(this.baseUrl, evento);
   }
@@ -34,7 +42,7 @@ export class EventoService {
     return this.http.put(`${this.baseUrl}/${evento.id}`, evento);
   }
 
-  deleteEvento(id: number){
+  deleteEvento(id: number) {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }
