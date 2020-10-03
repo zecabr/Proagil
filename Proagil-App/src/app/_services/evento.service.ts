@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Evento } from '../_models/Evento';
 
@@ -26,7 +26,7 @@ export class EventoService {
 
   // tslint:disable-next-line: typedef
   postUpload(file: File, name: string) {
-    const fileToUpload = <File> file[0];
+    const fileToUpload = <File>file[0];
     const formData = new FormData();
     formData.append('file', fileToUpload, name);
     return this.http.post(`${this.baseUrl}/upload`, formData);

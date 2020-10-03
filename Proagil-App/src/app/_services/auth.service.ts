@@ -28,12 +28,12 @@ export class AuthService {
   }
   register(model: any) {
     return this.http
-      .post(`${this.baseUrl}login`, model);
+      .post(`${this.baseUrl}register`, model);
 
   }
   loggedIn() {
     const token = localStorage.getItem('token');
-    return this.jwtHelper.isTokenExpired(token);
+    return !this.jwtHelper.isTokenExpired(token);
   }
 
 }

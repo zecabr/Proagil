@@ -52,7 +52,6 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
-
   cadastrarUsuario() {
     if (this.registerForm.valid) {
       this.user = Object.assign(
@@ -75,10 +74,9 @@ export class RegistrationComponent implements OnInit {
             }
           });
         }
-
       );
     }
   }
-
-
 }
+
+
