@@ -1,8 +1,9 @@
-import {Lote} from './Lote';
-import {RedeSocial} from './RedeSocial';
-import {Palestrante} from './Palestrante';
+import { Lote } from './Lote';
+import { RedeSocial } from './RedeSocial';
+import { Palestrante } from './Palestrante';
 
-export interface Evento {
+export class Evento {
+     constructor() { }
      id: number;
      local: string;
      dataEvento: Date;

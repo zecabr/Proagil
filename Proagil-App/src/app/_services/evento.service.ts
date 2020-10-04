@@ -12,16 +12,16 @@ export class EventoService {
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line: typedef
-  getAllEvento(): Observable<Evento[]> {
-    return this.http.get<Evento[]>(this.baseUrl);
+  getAllEvento(): Observable<Evento> {
+    return this.http.get<Evento>(this.baseUrl);
   }
 
-  getEventoByTrma(tema: string): Observable<Evento[]> {
-    return this.http.get<Evento[]>(`${this.baseUrl}/getByTema/${tema}`);
+  getEventoByTrma(tema: string): Observable<Evento> {
+    return this.http.get<Evento>(`${this.baseUrl}/getByTema/${tema}`);
   }
 
-  getEventoById(id: number): Observable<Evento[]> {
-    return this.http.get<Evento[]>(`${this.baseUrl}/${id}`);
+  getEventoById(id: number): Observable<Evento> {
+    return this.http.get<Evento>(`${this.baseUrl}/${id}`);
   }
 
   // tslint:disable-next-line: typedef
